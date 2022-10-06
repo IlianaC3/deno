@@ -1,0 +1,8 @@
+<body style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; background-color: black;">
+    <h1 style="color: white;">Colores</h1>
+    <ul style="font-weight: 900;">
+        <% data.forEach(function(unique) { %>
+            <li style="color: <%= unique.color %>">Color: <%= unique.color %></li>
+        <% }); %>
+    </ul>
+</body>
