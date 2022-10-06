@@ -3,11 +3,11 @@ import { Router } from "../dependencies.ts";
 
 const router = new Router();
 
-router.get("/", async (ctx) => {
+router.get("/", async function (ctx) {
     ctx.response.body = await getColores();
 });
 
-router.post("/", async (ctx) => {
+router.post("/", async function (ctx) {
     if (!ctx.request.hasBody) {
         ctx.response.body = {
             err: 404,
@@ -26,7 +26,7 @@ router.post("/", async (ctx) => {
     
 });
 
-router.get("/home", async (ctx, next) => {
+router.get("/home", async function (ctx, next) {
     await ctx.render("home.ejs", {data: await getColores()})
 });
 
